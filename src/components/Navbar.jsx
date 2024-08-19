@@ -9,7 +9,7 @@ const Navbar = () => {
   const handleClick = () => setToggle(!toggle);
 
   return (
-    <header className="w-screen h-[3.125rem] md:h-[7.5rem] sm:h-[7.5rem] z-10 bg-white p-4">
+    <header className="w-screen h-[3.125rem] md:h-[7.5rem] sm:h-[7.5rem] z-10 bg-white p-4 fade-in">
       <div className="flex justify-between items-center w-full h-full md:max-w-[1240px] mx-auto">
         <div className="flex items-center">
           <img

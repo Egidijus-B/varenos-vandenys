@@ -26,7 +26,7 @@ const ButtonGrid = () => {
         {buttons.map((button, index) => (
           <button
             key={index}
-            className="flex items-center justify-center w-full h-[3.25rem] text-blue-500 bg-white border-2 border-blue-500 rounded hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="text-sm font-bold button-shadow flex items-center justify-center w-full h-[3.25rem] text-blue-900 bg-white rounded hover:bg-blue-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 px-4 md:px-6 border-none"
           >
             <span className="mr-2" aria-hidden="true">{button.icon}</span>
             <span className="sr-only">{button.text}</span>
