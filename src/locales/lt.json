@@ -1,0 +1,22 @@
+{
+    "navbar": {
+      "home": "Pagrindinis",
+      "about": "Apie mus",
+      "services": "Paslaugos",
+      "contact": "Kontaktai"
+    },
+    "hero": {
+      "title": "Kokybė",
+      "description": "Mes siekiame būti įmonė, atitinkančia visuomenės poreikius ir interesus."
+    },
+    "buttonGrid": {
+      "button1": "Teisinė informacija",
+      "button2": "Gyvenamosios vietovės",
+      "button3": "Asmens duomenų apsauga",
+      "button4": "Korupcijos prevencija",
+      "button5": "Atlyginimas",
+      "button6": "Viešieji pirkimai",
+      "button7": "Administracija",
+      "button8": "Karjera"
+    }
+  }

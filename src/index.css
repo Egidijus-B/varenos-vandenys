@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  background-color: #ECF5FF; /* Added missing # */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: "Lato", Arial, sans-serif;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/Roboto.woff2') format('woff2');
+}
+
+@layer base {
+  li {
+    @apply p-4;
+  }
+
+  button {
+    @apply text-white border bg-[#001AA4] border-[#001AA4] hover:bg-transparent hover:text-[#001AA4] rounded-md;
+  }
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  .line-break {
+    white-space: pre-wrap;
+  }
+
+  .hero-section {
+    height: 73vh;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 40vh;
+    }
+  }
+
+  footer h2 {
+    font-size: 20px;
+  }
+
+  .marker {
+    @apply flex justify-center items-center;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .location-icon {
+    @apply text-red-500 text-xl; /* Customize icon color and size */
+  }
+
+}
+
+
+
+
+

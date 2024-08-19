@@ -1,0 +1,23 @@
+{
+    "navbar": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Quality",
+      "description": "We strive to be a company that meets the needs and interests of society."
+    },
+    "buttonGrid": {
+      "button1": "Legal Information",
+      "button2": "Residential Areas",
+      "button3": "Data Protection",
+      "button4": "Corruption Prevention",
+      "button5": "Salary",
+      "button6": "Public Procurements",
+      "button7": "Administration",
+      "button8": "Career"
+    }
+  }
+  
