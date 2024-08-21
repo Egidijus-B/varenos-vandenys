@@ -14,7 +14,7 @@ const Hero = () => {
         </p>
         <div className="flex justify-center space-x-4">
           <button
-            className=" flex items-center text-white py-2 px-4 rounded hover:bg-white border "
+            className=" button flex items-center text-white py-2 px-4 rounded hover:bg-white border "
           >
             Apie mus
             <FaArrowRightLong className="ml-2" />

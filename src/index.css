@@ -34,7 +34,7 @@ html, body {
     @apply p-4;
   }
 
-  button {
+  .button {
     @apply text-white border bg-[#001AA4] border-[#001AA4] hover:bg-transparent hover:text-[#001AA4] rounded-md;
   }
 
@@ -98,13 +98,6 @@ html, body {
   }
 }
 
-/* Mobile first - default order */
-.footer-column {
-  order: 3; /* Third column */
-}
-.footer-column:nth-child(2) {
-  order: 4; /* Fourth column */
-}
 .footer-column:nth-child(3) {
   order: 1; /* First column */
 }
