@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'; // Import Link
 import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { MdBusinessCenter } from "react-icons/md";
 import { PiTreeStructureFill } from "react-icons/pi";
@@ -9,14 +10,14 @@ import { FaBalanceScale } from "react-icons/fa";
 
 const ButtonGrid = () => {
   const buttons = [
-    { text: 'TEISINĖ INFORMACIJA', icon: <FaBalanceScale /> },
-    { text: 'APTARNAUJAMOS GYVENVIETĖS', icon: <FaLocationDot /> },
-    { text: 'ASMENS DUOMENŲ APSAUGA', icon: <BsFillShieldLockFill /> },
-    { text: 'KORUPCIJOS PREVENCIJA', icon: <FaPeopleArrows /> },
-    { text: 'DARBO UŽMOKESTIS', icon: <FaRegMoneyBillAlt /> },
-    { text: 'VIEŠIEJI PIRKIMAI', icon: <HiOutlineClipboardDocumentList /> },
-    { text: 'ADMINISTRACIJA', icon: <PiTreeStructureFill /> },
-    { text: 'KARJERA', icon: <MdBusinessCenter /> },
+    { text: 'TEISINĖ INFORMACIJA', icon: <FaBalanceScale />, link: "/teisine-informacija" },
+    { text: 'APTARNAUJAMOS GYVENVIETĖS', icon: <FaLocationDot />, link: "/gyvenamosios-vietoves" },
+    { text: 'ASMENS DUOMENŲ APSAUGA', icon: <BsFillShieldLockFill />, link: "/asmens-duomenu-apsauga" },
+    { text: 'KORUPCIJOS PREVENCIJA', icon: <FaPeopleArrows />, link: "/korupcijos-prevencija" },
+    { text: 'DARBO UŽMOKESTIS', icon: <FaRegMoneyBillAlt />, link: "/darbo-uzmokestis" },
+    { text: 'VIEŠIEJI PIRKIMAI', icon: <HiOutlineClipboardDocumentList />, link: "/viesieji-pirkimai" },
+    { text: 'ADMINISTRACIJA', icon: <PiTreeStructureFill />, link: "/administracija" },
+    { text: 'KARJERA', icon: <MdBusinessCenter />, link: "/karjera" },
   ];
 
   return (
@@ -24,14 +25,15 @@ const ButtonGrid = () => {
       <h2 className="text-3xl font-bold text-center mb-8">Aktualios nuorodos</h2>
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 md:max-w-[1240px]">
         {buttons.map((button, index) => (
-          <button
+          <Link // Change from <a> to <Link>
             key={index}
-            className="text-sm font-bold button-shadow flex items-center justify-center w-full h-[3.25rem] text-blue-900 bg-white rounded hover:bg-blue-900 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 px-4 md:px-6 border-none"
+            to={button.link} // Use to instead of href
+            className="text-sm font-bold flex items-center justify-center w-full h-[4rem] text-blue-900 bg-white rounded border border-blue-900 shadow-md hover:bg-blue-900 hover:text-white hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 px-4 md:px-6"
+            aria-label={button.text}
           >
             <span className="mr-2" aria-hidden="true">{button.icon}</span>
-            <span className="sr-only">{button.text}</span>
             <span>{button.text}</span>
-          </button>
+          </Link>
         ))}
       </div>
     </section>
@@ -39,3 +41,4 @@ const ButtonGrid = () => {
 };
 
 export default ButtonGrid;
+

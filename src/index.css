@@ -11,7 +11,7 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  background-color: #ECF5FF; 
+  background-color: white; 
 }
 
 html, body {
@@ -59,6 +59,10 @@ html, body {
 
   footer h2 {
     font-size: 20px;
+  }
+
+  footer {
+    position: relative; /* Ensure the footer has relative positioning */
   }
 
   .marker {
@@ -111,6 +115,30 @@ html, body {
     order: initial;
   }
 }
+
+.high-contrast {
+  background-color: black;
+  color: white;
+}
+
+.high-contrast a,
+.high-contrast li {
+  color: yellow;
+}
+
+.high-contrast button {
+  background-color: yellow;
+  color: black;
+}
+
+/* Ensure that accessibility menu text remains black */
+.accessibility-menu * {
+  color: black !important;
+}
+
+
+
+
 
 
 
