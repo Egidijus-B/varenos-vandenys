@@ -1,0 +1,4 @@
+/* Button Styles */
+.button {
+    @apply text-white border bg-[#001AA4] border-[#001AA4] hover:bg-transparent hover:text-[#001AA4] rounded-md;
+  }

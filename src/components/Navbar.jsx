@@ -5,7 +5,7 @@ import logo from '../assets/logo.png';
 import menu from '../assets/menu.svg';
 import close from '../assets/close.svg';
 import siteMapIcon from '../assets/sitemap.png';
-import Nav from './Nav'; // Import Nav component
+import { Link } from 'react-router-dom'; 
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -22,21 +22,23 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-screen h-[3.125rem] md:h-[7.5rem] bg-white p-4 fade-in lg:z-50 relative">
-      <div className="flex justify-between items-center w-full h-full md:max-w-[1240px] mx-auto relative">
+    <header className="w-screen h-[3.125rem] md:h-[5rem] bg-white p-4 fade-in lg:z-50 relative pt-0 pb-0"> {/* Added mt-0 and mb-0 */}
+      <div className="flex justify-between items-center w-full h-full md:max-w-[1320px] mx-auto relative">
         {/* Logo Section */}
         <div className="flex items-center flex-grow">
+          <Link to="/" >
           <img
             src={logo}
             alt="company logo"
             className="md:h-[3.125rem] sm:h-[3.125rem] h-[1.5625rem] sm:ml-10 md:ml-10 ml-5"
           />
+          </Link>
         </div>
 
         {/* Contact Info Section */}
         <div className="hidden border-solid rounded md:inline-block text-white bg-[#001AA4] border-2 md:h-[4.25rem] md:w-[15.375rem] p-2 text-center ml-auto mr-4">
-          <div>Bendrasis telefonas</div>
-          <div>
+          <div style={{ fontSize: '0.875rem' }}>Bendrasis telefonas</div>
+          <div style={{ fontSize: '0.875rem' }}>
             <a href="tel:831031683" className="text-white hover:underline">+370 310 31683</a>
           </div>
         </div>
@@ -58,12 +60,14 @@ const Navbar = () => {
           <div className="flex items-center space-x-2">
             <button
               className={`py-1 px-2 transition duration-300 rounded ${language === 'EN' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800 hover:bg-blue-200 hover:text-gray-800'}`}
+              style={{ fontSize: '0.875rem' }} // Font size set to 14px (0.875rem)
               onClick={() => handleLanguageChange('EN')}
             >
               EN
             </button>
             <button
               className={`py-1 px-2 transition duration-300 rounded ${language === 'LT' ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800 hover:bg-blue-200 hover:text-gray-800'}`}
+              style={{ fontSize: '0.875rem' }} // Font size set to 14px (0.875rem)
               onClick={() => handleLanguageChange('LT')}
             >
               LT
@@ -93,11 +97,11 @@ const Navbar = () => {
             />
           </div>
           <ul className="flex flex-col items-center w-full text-blue-500">
-            <li className="py-2"><a href="#gedimai">Gedimai tinkluose</a></li>
-            <li className="py-2"><a href="#kainos">Kainos</a></li>
-            <li className="py-2"><a href="#abonementai">Abonementų prisijungimas</a></li>
-            <li className="py-2"><a href="#projektai">Projektai</a></li>
-            <li className="py-2"><a href="#kontaktai">Kontaktai</a></li>
+            <li className="py-2" style={{ fontSize: '0.875rem' }}><a href="#gedimai">Gedimai tinkluose</a></li>
+            <li className="py-2" style={{ fontSize: '0.875rem' }}><a href="#kainos">Kainos</a></li>
+            <li className="py-2" style={{ fontSize: '0.875rem' }}><a href="#abonementai">Abonementų prisijungimas</a></li>
+            <li className="py-2" style={{ fontSize: '0.875rem' }}><a href="#projektai">Projektai</a></li>
+            <li className="py-2" style={{ fontSize: '0.875rem' }}><a href="#kontaktai">Kontaktai</a></li>
           </ul>
         </div>
       )}
@@ -106,5 +110,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
 
 

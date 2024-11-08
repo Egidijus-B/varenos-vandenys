@@ -1,4 +1,3 @@
-import 'leaflet/dist/leaflet.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Nav from './components/Nav';
@@ -8,8 +7,7 @@ import Footer from './components/Footer';
 import AccessibilityButton from './components/AccessibilityButton';
 import NewsSection from './components/NewsSection';
 import ClientCount from './components/ClientCount';
-import CertificatesSection from './components/CertificatesSection';
-import Map from './components/Map';
+import CertificatesSection from './components/CertificatesSection'
 // Import page components
 import GedimaiTinkluose from './pages/gedimaiTinkluose';
 import Kainos from './pages/kainos';
@@ -36,7 +34,7 @@ export default function App() {
         {/* Main content area */}
         <Routes>
           {/* Render Hero and ButtonGrid only on the home route */}
-          <Route path="/" element={<><Hero /><NewsSection /><ButtonGrid /><ClientCount /><CertificatesSection /><Map /></>} />
+          <Route path="/" element={<><Hero /><ButtonGrid /><NewsSection /><ClientCount /><CertificatesSection /></>} />
 
           {/* Render page components */}
           <Route path="/gedimai-tinkluose" element={<GedimaiTinkluose />} />

@@ -1,0 +1,13 @@
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+  }
+  
+  /* Background Image for Hero */
+  .hero_img {
+    background-image: url('../assets/hero.png'); 
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 400px;
+  }

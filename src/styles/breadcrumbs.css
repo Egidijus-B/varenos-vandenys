@@ -1,0 +1,21 @@
+/* breadcrumb */
+.breadcrumb-container {
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    background-color: #f9f9f9;
+  }
+  
+  .breadcrumb-link {
+    text-decoration: none;
+    color: #001aa4;
+    font-weight: 600;
+    transition: color 0.2s ease;
+  }
+  
+  .breadcrumb-link:hover {
+    color: #4a4a4a;
+  }
+  
+  .breadcrumb-link:focus {
+    outline: 2px solid #001aa4;
+  }

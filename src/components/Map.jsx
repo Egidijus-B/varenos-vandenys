@@ -3,8 +3,10 @@ import React from 'react';
 const Map = () => {
   const iframeStyle = {
     border: 0,
-    width: '100%',
-    height: '220px'
+    width: '80%', // Set width to 80%
+    height: '220px',
+    display: 'block', // Makes it easier to center
+    margin: '0 auto' // Centers the iframe
   };
 
   return (

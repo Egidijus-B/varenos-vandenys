@@ -1,0 +1,113 @@
+/* Navigation Container */
+.nav-container {
+    width: 100vw;
+    height: 4rem;
+    padding: 1rem;
+    border-top: 1px solid #e5e5e5;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    max-width: 1240px;
+    margin: 0 auto;
+    gap: 0.5rem;
+  }
+  
+  .nav-item {
+    padding: 0.5rem;
+    font-size: 0.9375rem;
+  }
+  
+  .nav-link {
+    color: #001aa4;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #4a4a4a;
+  }
+  
+  /* Navigation Link Underline Animation */
+  .nav-link {
+    color: #001aa4;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 2px; /* Space for underline animation */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+  
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Position at the bottom of the link */
+    left: 0; /* Start from the left */
+    width: 0; /* Initial width for the animation */
+    height: 2px; /* Thickness of the underline */
+    background-color: #001aa4; /* Same color as the text */
+    transition: width 0.3s ease; /* Transition for the width expansion */
+    border-radius: 1px; /* Smooth edges for the underline */
+  }
+  
+  .nav-link:hover::before {
+    width: 100%; /* Expand underline to full width on hover */
+  }
+  
+  .nav-link:hover {
+    color: #4a4a4a; /* Optional: change text color on hover */
+  }
+  
+  /* Search Styles */
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #001aa4;
+    font-weight: bold;
+  }
+  
+  .search-text {
+    margin-right: 0.5rem;
+  }
+  
+  .search-icon {
+    color: #001aa4;
+  }
+  
+  .search-input-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .search-input:focus {
+    border-color: #001aa4;
+  }
+  
+  .close-search {
+    background: none;
+    border: none;
+    color: #001aa4;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }

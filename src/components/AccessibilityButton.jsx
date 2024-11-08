@@ -1,109 +1,100 @@
 import React, { useState, useRef, useEffect } from 'react';
-import accessibilityIcon from '../assets/accessibility.png'; // Assuming you use an icon
+import accessibilityIcon from '../assets/accessibility.png';
 
 const AccessibilityMenu = () => {
-  const [isOpen, setIsOpen] = useState(false); // Track menu visibility
-  const [fontSize, setFontSize] = useState(16); // Default font size
+  const [isOpen, setIsOpen] = useState(false);
+  const [fontSize, setFontSize] = useState(16);
   const [isHighContrast, setIsHighContrast] = useState(false);
-  const menuRef = useRef(null); // Create a ref for the menu
+  const menuRef = useRef(null);
 
-  // Toggle accessibility menu
-  const toggleMenu = () => {
-    setIsOpen(!isOpen); // Toggle menu visibility
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
-  // Close the menu
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
-
-  // Increase font size with a limit
   const increaseTextSize = () => {
     if (fontSize < 24) {
-      setFontSize(prevSize => prevSize + 1);
-      document.body.style.fontSize = `${fontSize + 1}px`;
+      const newSize = fontSize + 1;
+      setFontSize(newSize);
+      document.body.style.fontSize = `${newSize}px`;
     }
   };
 
-  // Decrease font size with a limit
   const decreaseTextSize = () => {
     if (fontSize > 12) {
-      setFontSize(prevSize => prevSize - 1);
-      document.body.style.fontSize = `${fontSize - 1}px`;
+      const newSize = fontSize - 1;
+      setFontSize(newSize);
+      document.body.style.fontSize = `${newSize}px`;
     }
   };
 
-  // Toggle high contrast mode
   const toggleHighContrast = () => {
     setIsHighContrast(!isHighContrast);
     document.body.classList.toggle('high-contrast');
   };
 
-  // Reset accessibility settings
   const resetAccessibility = () => {
     setFontSize(16);
-    document.body.style.fontSize = '16px';
     setIsHighContrast(false);
+    document.body.style.fontSize = '16px';
     document.body.classList.remove('high-contrast');
   };
 
-  // Close the menu if the user clicks outside of it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         closeMenu();
       }
     };
-
-    // Add event listener
     document.addEventListener('mousedown', handleClickOutside);
-
-    // Cleanup the event listener
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   return (
     <>
-      {/* Accessibility Button */}
+      {/* Accessibility Toggle Button */}
       <button
         onClick={toggleMenu}
-        className="fixed top-1/2 right-0 transform -translate-y-1/2 bg-blue-400 p-3 rounded-l-md z-50"
+        className="accessibility-button"
         aria-label="Open Accessibility Menu"
+        aria-pressed={isOpen}
       >
-        <img src={accessibilityIcon} alt="Accessibility" className="w-6 h-6" />
+        <img src={accessibilityIcon} alt="Accessibility" className="accessibility-icon" />
       </button>
 
       {/* Accessibility Menu */}
       <div
-        ref={menuRef} // Attach ref to the menu div
-        className={`fixed top-0 right-0 h-full bg-white p-4 shadow-lg z-50 transform ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        } transition-transform duration-300`}
+        ref={menuRef}
+        className={`accessibility-menu ${isOpen ? 'open' : 'closed'}`}
       >
         {/* Close Button */}
         <button
           onClick={closeMenu}
-          className="absolute top-4 right-4 text-black text-2xl font-bold p-2"
-          style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
+          className="close-button"
+          aria-label="Close Accessibility Menu"
         >
-          &times; {/* Close symbol */}
+          &times;
         </button>
 
         {/* Accessibility Controls */}
-        <ul className="space-y-4 mt-10 text-black">
-          <li onClick={increaseTextSize} className="p-2 hover:bg-gray-100 cursor-pointer">
-            Increase Text Size
+        <ul className="accessibility-controls">
+          <li>
+            <button onClick={increaseTextSize} aria-label="Increase Text Size" aria-pressed={fontSize > 16}>
+              Increase Text Size
+            </button>
           </li>
-          <li onClick={decreaseTextSize} className="p-2 hover:bg-gray-100 cursor-pointer">
-            Decrease Text Size
+          <li>
+            <button onClick={decreaseTextSize} aria-label="Decrease Text Size" aria-pressed={fontSize < 16}>
+              Decrease Text Size
+            </button>
           </li>
-          <li onClick={toggleHighContrast} className="p-2 hover:bg-gray-100 cursor-pointer">
-            Toggle High Contrast
+          <li>
+            <button onClick={toggleHighContrast} aria-label="Toggle High Contrast" aria-pressed={isHighContrast}>
+              Toggle High Contrast
+            </button>
           </li>
-          <li onClick={resetAccessibility} className="p-2 hover:bg-gray-100 cursor-pointer">
-            Reset
+          <li>
+            <button onClick={resetAccessibility} aria-label="Reset Accessibility Settings">
+              Reset
+            </button>
           </li>
         </ul>
       </div>
@@ -112,5 +103,6 @@ const AccessibilityMenu = () => {
 };
 
 export default AccessibilityMenu;
+
 
 

@@ -1,22 +1,19 @@
 import { useState } from 'react';
 import { FaArrowRightLong } from "react-icons/fa6";
 import { Link } from 'react-router-dom'; // Import Link from React Router
-import hero from '../assets/hero.png';
 
 const Hero = () => {
   const [isVeiklaHovered, setIsVeiklaHovered] = useState(false); // Track hover state
 
   return (
-    <section
-      className="w-screen bg-cover bg-center md:py-10 lg:py-20 py-10 flex items-center justify-center hero-section"
-      style={{ backgroundImage: `url(${hero})` }}
-    >
-      <div className="p-6 rounded md:mt-[-3rem] sm:mt-[-2rem] mt-[-1rem]">
-        <h1 className="lg:text-7xl md:text-5xl text-3xl font-bold mb-4 text-[#001AA4]">KOKYBĖ</h1>
-        <p className="lg:text-4xl mb-8 text-[#001AA4] font-bold">
+    <section className="w-screen md:flex items-center justify-center">
+      {/* Text Section */}
+      <div className="md:w-1/2 p-6 lg:pr-0 md:p-20 lg:p-20 lg:ml-20">
+        <h1 className="lg:text-6xl md:text-4.5xl text-3xl font-bold mb-4 text-[#001AA4]">KOKYBĖ</h1>
+        <p className="lg:text-3xl mb-8 text-[#001AA4] font-bold">
           VIENINTELIS KELIAS UŽTIKRINTI SVEIKĄ GYVENIMO BŪDĄ.
         </p>
-        <div className="flex justify-center space-x-4">
+        <div className="flex space-x-4">
           {/* "Apie mus" button */}
           <Link to="/apie-mus">
             <button
@@ -42,9 +39,21 @@ const Hero = () => {
           </Link>
         </div>
       </div>
+
+      {/* Image Section */}
+      <div
+        className="hidden md:block md:w-1/2 h-full hero_img" // Apply the class for background image
+        aria-label="Hero background image"
+      >
+        {/* Empty div for background image */}
+      </div>
     </section>
   );
 };
 
 export default Hero;
+
+
+
+
 

@@ -1,25 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types'; // Ensure PropTypes is imported
+import PropTypes from 'prop-types';
+import thumb from '../assets/thumb.jpeg';
 
 const NewsCard = ({ title, date, description, image }) => {
   return (
-    <div style={{ paddingLeft: '2rem', paddingRight: '2rem', paddingBottom: '2rem', paddingTop: '2rem' }}>
-      <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden mb-4 w-full h-auto">
-        {/* Image or video thumbnail */}
-        <div className="w-full md:w-/3 h-auto">
+    <div className="w-full">
+      <div className="bg-white rounded-lg overflow-hidden shadow-md flex flex-col h-full">
+        <div className="w-full h-auto">
           <img
-            src={image}
+            src={thumb}
             alt="News Thumbnail"
-            className="w-full h-[150px] md:h-[250px] object-cover" // Reduced height on desktop
+            className="w-full h-[200px] md:h-[250px] object-cover"
           />
         </div>
-        {/* Content section */}
-        <div className="w-full md:w-2/3 p-2 md:p-3 flex flex-col justify-between"> {/* Reduced padding */}
-          <div className="text-right text-gray-600 text-sm">{date}</div>
-          <h2 className="text-lg font-bold my-1 truncate text-blue-500">{title}</h2>
-          <p className="text-gray-700 text-sm truncate">{description}</p>
-          <div className="flex justify-end mt-auto">
-            <button className="bg-blue-500 text-white px-4 py-1 md:py-2 rounded hover:bg-blue-600 text-xs mt-2">
+
+        <div className="p-4 flex flex-col flex-grow justify-between">
+          <div className="text-gray-600 text-sm mb-2">{date}</div>
+          <h2 className="text-lg font-bold my-1 text-blue-500">{title}</h2>
+          <p className="text-gray-700 text-sm mb-4 line-clamp-2">{description}</p>
+
+          <div className="flex justify-end">
+            <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 text-xs">
               Read More
             </button>
           </div>
@@ -37,6 +38,9 @@ NewsCard.propTypes = {
 };
 
 export default NewsCard;
+
+
+
 
 
 

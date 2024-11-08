@@ -1,0 +1,91 @@
+/* Accessibility button and icon */
+.accessibility-button {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #FFFF;
+    padding: 0.3rem;
+    border-radius: 0.5rem 0 0 0.5rem;
+    z-index: 50;
+  }
+  
+  .accessibility-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  /* Accessibility Menu */
+  .accessibility-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 50;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .accessibility-menu.open {
+    transform: translateX(0);
+  }
+  
+  .accessibility-menu.closed {
+    transform: translateX(100%);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .accessibility-controls {
+    margin-top: 3rem;
+    color: black;
+  }
+  
+  .accessibility-controls li button {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: left;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  
+  .accessibility-controls li button:hover {
+    background-color: #f0f0f0;
+  }
+
+  .accessibility-icon {
+    width: 40px; 
+    height: 40px;
+  }
+
+  /* High Contrast Mode */
+.high-contrast {
+    background-color: black;
+    color: white;
+  }
+  
+  .high-contrast a,
+  .high-contrast li {
+    color: yellow;
+  }
+  
+  .high-contrast button {
+    background-color: yellow;
+    color: black;
+  }
